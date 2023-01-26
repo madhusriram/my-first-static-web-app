@@ -1,11 +1,5 @@
 import React from 'react';
 
-function renderResults(data) {
-  let html = `<h2>"${data}"</h2>`;
-  let container = document.querySelector('.container');
-  container.innerHTML = html;
-}
-
 function App() {
 
   const handleSubmit = event => {
@@ -22,8 +16,7 @@ function App() {
 
     return fetch("/api/mapReq?" + qryString)
     .then(response => response.text())
-    .then(data => renderResults(data));
-
+    .then(data => console.log(data));
 
     // const qryString = new URLSearchParams(formData).toString();
     // as an improvement, implement caching of URI to serve previously returned answers
