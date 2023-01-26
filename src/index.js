@@ -92,12 +92,11 @@ class App extends React.Component {
     
     console.log("/api/mapReq?" + qryString);
 
-    return fetch("/api/mapReq?" + qryString)
+    fetch("/api/mapReq?" + qryString)
     .then(response => response.text())
-    .then(data => console.log(data));
+    .then(data => data);
 
-    //var innerHtml = document.getElementById("resultContainer")
-    //innerHtml.
+    document.querySelector("resultContainer").innerHTML = data;
   }
 
   handleChange(field, e){
@@ -121,10 +120,11 @@ class App extends React.Component {
             <option value="default">Default(Perf)</option>
           </select>
         </fieldset>
+        <br/>
         <button type="submit" class="buttonClass">Submit</button>
       </form>
 
-      <div class="resultcontainer">
+      <div id="resultcontainer">
 
       </div>
     </div>
