@@ -82,7 +82,19 @@ class App extends React.Component {
       alert("Form has errors!")
     }
 
-    // submit to Azure functions
+    // submit to backedn!
+    const formData = new FormData(e.target);
+    const data = [...formData.entries()];
+
+    const qryString = data
+    .map(x => `${encodeURIComponent(x[0])}=${encodeURIComponent(x[1])}`)
+    .join('&');
+    
+    console.log("/api/mapReq?" + qryString);
+
+    return fetch("/api/mapReq?" + qryString)
+    .then(response => response.text())
+    .then(data => console.log(data));
   }
 
   handleChange(field, e){
