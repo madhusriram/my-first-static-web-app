@@ -1,6 +1,6 @@
 import React from 'react';
 
-function renderResults() {
+function renderResults(data) {
   let html = `<h2>"${data}"</h2>`;
   let container = document.querySelector('.container');
   container.innerHTML = html;
