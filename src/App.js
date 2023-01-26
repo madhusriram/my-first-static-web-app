@@ -1,22 +1,28 @@
 import React from 'react';
-//import {useNavigate} from 'react-router-dom';
 
 function App() {
-  //const navigate = useNavigate();
 
   const handleSubmit = event => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = [...formData.entries()];
 
+    // TODO validate v4/v6 address
     const qryString = data
     .map(x => `${encodeURIComponent(x[0])}=${encodeURIComponent(x[1])}`)
     .join('&');
-    console.log("/api/mapReq?" + qryString);
-    fetch("/api/mapReq?" + qryString)
-    .then(response => response.json());
     
-    //navigate("/api/mapReq/" + qryString);
+    console.log("/api/mapReq?" + qryString);
+
+    return fetch("/api/mapReq?" + qryString)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+    })
+    .then((json) => {
+      return json;
+    });
 
     // const qryString = new URLSearchParams(formData).toString();
     // console.log(qryString);
