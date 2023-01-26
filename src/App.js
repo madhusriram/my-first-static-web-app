@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom';
 
 function App() {
   const navigate = useNavigate();
-  
+
   const handleSubmit = event => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -12,8 +12,8 @@ function App() {
     const qryString = data
     .map(x => `${encodeURIComponent(x[0])}=${encodeURIComponent(x[1])}`)
     .join('&');
-    console.log("/api/mapReq" + qryString);
-    navigate("/api/mapReq" + qryString);
+    console.log("/api/mapReq/" + qryString);
+    navigate("/api/mapReq/" + qryString);
 
     // const qryString = new URLSearchParams(formData).toString();
     // console.log(qryString);
