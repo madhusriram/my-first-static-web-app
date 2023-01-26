@@ -1,5 +1,9 @@
 import React from 'react';
 
+function DisplayData() {
+  console.log(data);
+}
+
 function App() {
 
   const handleSubmit = event => {
@@ -16,7 +20,7 @@ function App() {
 
     return fetch("/api/mapReq?" + qryString)
     .then(response => response.text())
-    .then(data => console.log(data));
+    .then(data => DisplayData(data));
 
     // const qryString = new URLSearchParams(formData).toString();
     // console.log(qryString);
