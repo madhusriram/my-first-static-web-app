@@ -5,13 +5,12 @@ function App() {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = [...formData.entries()];
-    console.log(data);
 
     const qryString = data
     .map(x => `${encodeURIComponent(x[0])}=${encodeURIComponent(x[1])}`)
     .join('&');
-    console.log(qryString);
-    fetch(qryString);
+    console.log("/api/mapReq" + qryString);
+    navigate("/api/mapReq" + qryString);
 
     // const qryString = new URLSearchParams(formData).toString();
     // console.log(qryString);
@@ -40,7 +39,7 @@ function App() {
           <option value="default">Default(Perf)</option>
         </select>
       </fieldset>
-      <button type="submit" class="buttonClass" form="nameform">Submit</button>
+      <button type="submit" class="buttonClass">Submit</button>
     </form>
     </div>
   )
