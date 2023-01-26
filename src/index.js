@@ -82,7 +82,7 @@ class App extends React.Component {
       alert("Form has errors!")
     }
 
-    // submit to backedn!
+    // submit to backend!
     const formData = new FormData(e.target);
     const data = [...formData.entries()];
 
@@ -113,7 +113,7 @@ class App extends React.Component {
       <form id="nameform" className="nameform" onSubmit= {this.handleSubmit.bind(this)}>
         <fieldset>
           <legend> Enter IP Address and a routing method!</legend>
-          <input ref="ip" type="text" size="30" onChange={this.handleChange.bind(this, "ip")} value={this.state.fields["ip"]}/>
+          <input name="ip" type="text" size="30" onChange={this.handleChange.bind(this, "ip")} value={this.state.fields["ip"]}/>
           <span className="error">{this.state.errors["ip"]}</span>
           <select name="routingMethod" id="routingMethod-select">
             <option value="">--Please choose an option</option>
