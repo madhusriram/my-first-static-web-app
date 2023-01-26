@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="wrapper">
     <h1>ATM Mapper</h1>
-    <form onSubmit={handleSubmit}>
+    <form id="nameform" onSubmit={handleSubmit}>
       <fieldset>
         <legend> Enter IP Address and a routing method!</legend>
         <label for="ip">IP:</label>
@@ -40,7 +40,7 @@ function App() {
           <option value="default">Default(Perf)</option>
         </select>
       </fieldset>
-      <button class="buttonclass" type="button">Submit</button>
+      <button type="submit" class="buttonClass" form="nameform">Submit</button>
     </form>
     </div>
   )
