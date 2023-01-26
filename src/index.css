@@ -58,3 +58,9 @@ select {
     font-size: 0.9rem;
     padding: 2px 5px;
 }
+
+.error{
+    margin-left: 5px;
+    font-size: 13px;
+    color: red;
+  }

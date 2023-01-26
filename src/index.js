@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import React from 'react';
 import './index.css';
+import { isIPV4Address } from 'ip-address-validator';
 
 class App extends React.Component {
   constructor(props) {
@@ -57,6 +58,25 @@ class App extends React.Component {
     </div>
   )
 */
+  
+  handleValidation(){
+    let fields = this.state.fields;
+    let errors = {};
+    let formIsValid = true;
+
+    if (!fields["ip"]) {
+      formIsValid = false;
+      errors["ip"] = "IP cannot be empty";
+    }
+
+    if (!isIPV4Address(fields["ip"]) && !isIPV6Address(fields["ip"])) {
+      formIsValid = false;
+      errors["ip"] = "Invalid IP. Please enter a valid IPv4/IPv6 address";
+    }
+
+    this.setState({errors: errors});
+    return formIsValid;
+  }
 
   handleSubmit(e){
     e.preventDefault();
