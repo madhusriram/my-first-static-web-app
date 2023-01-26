@@ -1,6 +1,9 @@
 import React from 'react';
+import {useNavigate} from 'react-router-dom';
 
 function App() {
+  const navigate = useNavigate();
+  
   const handleSubmit = event => {
     event.preventDefault();
     const formData = new FormData(event.target);
