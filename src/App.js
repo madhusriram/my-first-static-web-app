@@ -15,14 +15,8 @@ function App() {
     console.log("/api/mapReq?" + qryString);
 
     return fetch("/api/mapReq?" + qryString)
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      }
-    })
-    .then((json) => {
-      return json;
-    });
+    .then(response => response.text())
+    .then(data => console.log(data));
 
     // const qryString = new URLSearchParams(formData).toString();
     // console.log(qryString);
