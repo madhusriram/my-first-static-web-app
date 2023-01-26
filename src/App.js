@@ -12,8 +12,8 @@ function App() {
     const qryString = data
     .map(x => `${encodeURIComponent(x[0])}=${encodeURIComponent(x[1])}`)
     .join('&');
-    console.log("/api/mapReq/" + qryString);
-    fetch("/api/mapReq/" + qryString);
+    console.log("/api/mapReq?" + qryString);
+    fetch("/api/mapReq?" + qryString);
     //navigate("/api/mapReq/" + qryString);
 
     // const qryString = new URLSearchParams(formData).toString();
