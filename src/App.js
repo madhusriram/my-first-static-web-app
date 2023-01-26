@@ -1,7 +1,9 @@
 import React from 'react';
 
-function DisplayData() {
-  console.log(data);
+function renderResults() {
+  let html = `<h2>"${data}"</h2>`;
+  let container = document.querySelector('.container');
+  container.innerHTML = html;
 }
 
 function App() {
@@ -20,16 +22,10 @@ function App() {
 
     return fetch("/api/mapReq?" + qryString)
     .then(response => response.text())
-    .then(data => DisplayData(data));
+    .then(data => renderResults(data));
+
 
     // const qryString = new URLSearchParams(formData).toString();
-    // console.log(qryString);
-    // fetch(qryString);
-    // fetch(qryString)
-    // .then(response => response.json())
-    // .then(response => {
-      // Do something with response.
-    // })
     // as an improvement, implement caching of URI to serve previously returned answers
     // maybe set a timer to purge the cache regularly
   }
