@@ -3,6 +3,15 @@ import React from 'react';
 function App() {
   const handleSubmit = event => {
     event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = [...formData.entries()];
+    console.log(data);
+
+    const qryString = data
+    .map(x => `${encodeURIComponent(x[0])}=${encodeURIComponent(x[1])}`)
+    .join('&');
+    console.log(qryString);
+
   }
 
   return (
