@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react/dist/pure';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import React from 'react';
 import './index.css';
 import { isIPV4Address } from 'ip-address-validator';
 
