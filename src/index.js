@@ -1,4 +1,3 @@
-import { render } from '@testing-library/react/dist/pure';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -82,6 +81,8 @@ class App extends React.Component {
     if (!this.handleValidation()) {
       alert("Form has errors!")
     }
+
+    // submit to Azure functions
   }
 
   handleChange(field, e){
