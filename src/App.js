@@ -1,10 +1,14 @@
 import React from 'react';
 
 function App() {
+  const handleSubmit = event => {
+    event.preventDefault();
+  }
+
   return (
     <div className="wrapper">
-    <h1>En</h1>
-    <form>
+    <h1>ATM Mapper</h1>
+    <form onSubmit={handleSubmit}>
       <fieldset>
         <legend> Enter IP Address and a routing method!</legend>
         <label for="ip">IP:</label>
