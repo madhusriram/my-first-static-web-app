@@ -95,6 +95,9 @@ class App extends React.Component {
     return fetch("/api/mapReq?" + qryString)
     .then(response => response.text())
     .then(data => console.log(data));
+
+    //var innerHtml = document.getElementById("resultContainer")
+    //innerHtml.
   }
 
   handleChange(field, e){
@@ -107,7 +110,7 @@ class App extends React.Component {
     return (
     <div className="wrapper">
       <h1>ATM Mapper</h1>
-      <form id="nameform" className="nameform" onSubmit= {this.contactSubmit.bind(this)}>
+      <form id="nameform" className="nameform" onSubmit= {this.handleSubmit.bind(this)}>
         <fieldset>
           <legend> Enter IP Address and a routing method!</legend>
           <input ref="ip" type="text" size="30" onChange={this.handleChange.bind(this, "ip")} value={this.state.fields["ip"]}/>
@@ -120,11 +123,14 @@ class App extends React.Component {
         </fieldset>
         <button type="submit" class="buttonClass">Submit</button>
       </form>
+
+      <div class="resultcontainer">
+
+      </div>
     </div>
     )
     }
 }
 
 //export default App;
-
 ReactDOM.render(<App />, document.getElementById('root'));
