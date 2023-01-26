@@ -2,7 +2,7 @@ import { render } from '@testing-library/react/dist/pure';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { isIPV4Address } from 'ip-address-validator';
+import { isIPV4Address, isIPV6Address } from 'ip-address-validator';
 
 class App extends React.Component {
   constructor(props) {
