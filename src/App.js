@@ -34,7 +34,7 @@ function App() {
         <label for="ip">IP:</label>
         <input type="text" id="ip" name="ip" required></input>
         <label for="routingmethod-select">Routing Method: </label>
-        <select name="routingMethod" id="routing-method">
+        <select name="routingMethod" id="routingmethod-select">
           <option value="">--Please choose an option--</option>
           <option value="geo">Geo</option>
           <option value="default">Default(Perf)</option>
