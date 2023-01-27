@@ -96,7 +96,7 @@ class App extends React.Component {
     .then(response => response.text())
     .then(data => data);
 
-    document.querySelector("#resultContainer").innerHTML = data;
+    document.querySelector("resultcontainer").innerHTML = data;
   }
 
   handleChange(field, e){
@@ -123,7 +123,7 @@ class App extends React.Component {
         <button type="submit" class="buttonClass">Submit</button>
       </form>
 
-      <div id="resultcontainer">
+      <div class="resultcontainer">
 
       </div>
     </div>
