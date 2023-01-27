@@ -80,6 +80,7 @@ class App extends React.Component {
     e.preventDefault();
     if (!this.handleValidation()) {
       alert("Form has errors!")
+      return;
     }
 
     // submit to backend!
