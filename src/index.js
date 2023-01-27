@@ -98,9 +98,7 @@ class App extends React.Component {
     .then(data => data);
 
     console.log(data);
-    window.onload = function () {
-      document.querySelector("resultcontainer").innerHTML = data;
-    };
+    render("resultcontainer", data);
   }
 
   handleChange(field, e){
@@ -127,7 +125,7 @@ class App extends React.Component {
         <button type="submit" class="buttonClass">Submit</button>
       </form>
 
-      <div class="resultcontainer">
+      <div id="resultcontainer">
 
       </div>
     </div>
