@@ -19,31 +19,8 @@ class App extends React.Component {
       errors: {}
     }
   }
-/*
-  const handleSubmit = event => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const data = [...formData.entries()];
-
-    // TODO validate v4/v6 address
-    const qryString = data
-    .map(x => `${encodeURIComponent(x[0])}=${encodeURIComponent(x[1])}`)
-    .join('&');
-    
-    // validate address
-
-    console.log("/api/mapReq?" + qryString);
-
-    return fetch("/api/mapReq?" + qryString)
-    .then(response => response.text())
-    .then(data => console.log(data));
-
-    // const qryString = new URLSearchParams(formData).toString();
-    // as an improvement, implement caching of URI to serve previously returned answers
-    // maybe set a timer to purge the cache regularly
-  }
-
-  return (
+  
+/*  return (
     <div className="wrapper">
     <h1>ATM Mapper</h1>
     <form id="nameform" onSubmit={handleSubmit}>
