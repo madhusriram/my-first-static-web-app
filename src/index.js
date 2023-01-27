@@ -4,9 +4,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { isIPV4Address, isIPV6Address } from 'ip-address-validator';
 
+var _data;
+
 class Result extends React.Component {
   render() {
-    return <h1>Hello, world!</h1>
+    return _data.result;
   }
 }
 
@@ -19,7 +21,7 @@ class App extends React.Component {
       errors: {}
     }
   }
-  
+
 /*  return (
     <div className="wrapper">
     <h1>ATM Mapper</h1>
@@ -81,7 +83,9 @@ class App extends React.Component {
     .then(response => response.text())
     .then(data => data);
 
-    console.log(data);
+    _data.statusCode = "Success";
+    _data.result = data;
+
     const dom = document.getElementById("resultcontainer");
     ReactDOM.render(<Result />, dom);
   }
