@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import './index.css';
 import { isIPV4Address, isIPV6Address } from 'ip-address-validator';
 
 class Result extends React.Component {
   render() {
+
     return this.props.result;
   }
 }
@@ -19,7 +19,9 @@ class App extends React.Component {
       errors: {}
     }
   }
- 
+  // 2001:0000:1428:8F18:0000:0000:0000:0000
+  // 00FC:0000:0000:0000:0000:0000:0000:0000
+
   handleValidation(){
     let fields = this.state.fields;
     let errors = {};
@@ -42,12 +44,21 @@ class App extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     if (!this.handleValidation()) {
-      alert("Form has errors!")
+      alert("Form has errors; please retry!")
       return;
     }
 
-    // submit to backend!
+    // process input and submit to backend!
     const formData = new FormData(e.target);
+    
+    //format v6 address; remove all colons
+    let addr = formData.get("ip");
+    if (isIPV6Address(addr)) {
+      formData.set("ip", addr.replaceAll(':', ''));
+    } else if (isIPV4Address(addr)) {
+      formData.set("ip", addr.replaceAll('.', ''));
+    }
+
     const data = [...formData.entries()];
 
     const qryString = data

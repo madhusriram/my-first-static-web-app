@@ -63,4 +63,9 @@ select {
     margin-left: 5px;
     font-size: 13px;
     color: red;
-  }
+}
+
+.resultcontainer {
+    font-size: 0.9rem;
+
+}
