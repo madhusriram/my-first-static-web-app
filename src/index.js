@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import './index.css';
 import { isIPV4Address, isIPV6Address } from 'ip-address-validator';
 
-class Result {
+class Result extends React.Component {
   render() {
     return <h1>Hello, world!</h1>
   }
@@ -105,7 +106,7 @@ class App extends React.Component {
 
     console.log(data);
     const dom = document.getElementById("resultcontainer");
-    React.render(<Result />, dom);
+    ReactDOM.render(<Result />, dom);
   }
 
   handleChange(field, e){
