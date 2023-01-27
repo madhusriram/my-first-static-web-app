@@ -60,9 +60,6 @@ class App extends React.Component {
     .then(response => response.text())
     .then(data => data);
 
-    _data.statusCode = "Success";
-    _data.result = data;
-
     const dom = document.getElementById("resultcontainer");
     const element = <Result result={data}/>;
     ReactDOM.render(element, dom);
