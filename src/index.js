@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { isIPV4Address, isIPV6Address } from 'ip-address-validator';
 
+class Result {
+  render() {
+    return <h1>Hello, world!</h1>
+  }
+}
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -98,7 +104,8 @@ class App extends React.Component {
     .then(data => data);
 
     console.log(data);
-    render("resultcontainer", data);
+    const dom = document.getElementById("resultcontainer");
+    render(<Result />, dom);
   }
 
   handleChange(field, e){
