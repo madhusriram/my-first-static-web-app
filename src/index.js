@@ -105,7 +105,7 @@ class App extends React.Component {
 
     console.log(data);
     const dom = document.getElementById("resultcontainer");
-    render(<Result />, dom);
+    React.render(<Result />, dom);
   }
 
   handleChange(field, e){
