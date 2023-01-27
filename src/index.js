@@ -96,7 +96,7 @@ class App extends React.Component {
     .then(response => response.text())
     .then(data => data);
 
-    document.querySelector("resultContainer").innerHTML = data;
+    document.querySelector("#resultContainer").innerHTML = data;
   }
 
   handleChange(field, e){
@@ -120,7 +120,6 @@ class App extends React.Component {
             <option value="default">Default(Perf)</option>
           </select>
         </fieldset>
-        <br/>
         <button type="submit" class="buttonClass">Submit</button>
       </form>
 
