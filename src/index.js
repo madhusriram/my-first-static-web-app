@@ -4,11 +4,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { isIPV4Address, isIPV6Address } from 'ip-address-validator';
 
-var _data;
-
 class Result extends React.Component {
   render() {
-    return _data.result;
+    return this.props.result;
   }
 }
 
@@ -21,28 +19,7 @@ class App extends React.Component {
       errors: {}
     }
   }
-
-/*  return (
-    <div className="wrapper">
-    <h1>ATM Mapper</h1>
-    <form id="nameform" onSubmit={handleSubmit}>
-      <fieldset>
-        <legend> Enter IP Address and a routing method!</legend>
-        <label for="ip">IP:</label>
-        <input type="text" id="ip" name="ip" required></input>
-        <label for="routingmethod-select">Routing Method: </label>
-        <select name="routingMethod" id="routingmethod-select">
-          <option value="">--Please choose an option--</option>
-          <option value="geo">Geo</option>
-          <option value="default">Default(Perf)</option>
-        </select>
-      </fieldset>
-      <button type="submit" class="buttonClass">Submit</button>
-    </form>
-    </div>
-  )
-*/
-  
+ 
   handleValidation(){
     let fields = this.state.fields;
     let errors = {};
@@ -87,7 +64,8 @@ class App extends React.Component {
     _data.result = data;
 
     const dom = document.getElementById("resultcontainer");
-    ReactDOM.render(<Result />, dom);
+    const element = <Result result={data}/>;
+    ReactDOM.render(element, dom);
   }
 
   handleChange(field, e){
@@ -122,5 +100,4 @@ class App extends React.Component {
     }
 }
 
-//export default App;
 ReactDOM.render(<App />, document.getElementById('root'));
