@@ -80,6 +80,7 @@ class App extends React.Component {
           <legend> Enter IP Address and a routing method!</legend>
           <input name="ip" type="text" size="30" onChange={this.handleChange.bind(this, "ip")} value={this.state.fields["ip"]}/>
           <span className="error">{this.state.errors["ip"]}</span>
+          <br></br>
           <select name="routingMethod" id="routingMethod-select">
             <option value="">--Please choose an option</option>
             <option value="geo">Geo</option>
@@ -89,9 +90,7 @@ class App extends React.Component {
         <button type="submit" class="buttonClass">Submit</button>
       </form>
 
-      <div id="resultcontainer">
-
-      </div>
+      <div id="resultcontainer"></div>
     </div>
     )
     }
