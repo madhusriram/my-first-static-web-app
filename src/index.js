@@ -97,6 +97,7 @@ class App extends React.Component {
     .then(response => response.text())
     .then(data => data);
 
+    console.log(data);
     window.onload = function what() {
       document.querySelector("resultcontainer").innerHTML = data;
     };
