@@ -91,13 +91,15 @@ class App extends React.Component {
     .map(x => `${encodeURIComponent(x[0])}=${encodeURIComponent(x[1])}`)
     .join('&');
     
-    console.log("/api/mapReq?" + qryString);
+    console.log("API call: api/mapReq?" + qryString);
 
     fetch("/api/mapReq?" + qryString)
     .then(response => response.text())
     .then(data => data);
 
-    document.querySelector("resultcontainer").innerHTML = data;
+    window.onload = function what() {
+      document.querySelector("resultcontainer").innerHTML = data;
+    };
   }
 
   handleChange(field, e){
