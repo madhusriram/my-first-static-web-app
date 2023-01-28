@@ -4,6 +4,7 @@ import './index.css';
 import { isIPV4Address, isIPV6Address } from 'ip-address-validator';
 
 class Result extends React.Component {
+  // do any formatting needed here!
   render() {
 
     return this.props.result;
@@ -73,7 +74,7 @@ class App extends React.Component {
     .then(data => data);
 
     console.log(data);
-    
+
     const dom = document.getElementById("resultcontainer");
     const element = <Result result={data}/>;
     ReactDOM.render(element, dom);
