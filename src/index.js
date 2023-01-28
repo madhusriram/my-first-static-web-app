@@ -72,6 +72,8 @@ class App extends React.Component {
     .then(response => response.text())
     .then(data => data);
 
+    console.log(data);
+    
     const dom = document.getElementById("resultcontainer");
     const element = <Result result={data}/>;
     ReactDOM.render(element, dom);
