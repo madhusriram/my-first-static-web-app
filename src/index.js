@@ -102,6 +102,8 @@ class App extends React.Component {
         <button type="submit" class="buttonClass">Submit</button>
       </form>
 
+      <hr></hr>
+
       <div id="resultcontainer"></div>
     </div>
     )
