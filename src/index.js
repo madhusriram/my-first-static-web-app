@@ -68,7 +68,8 @@ class App extends React.Component {
     .join('&');
     
     console.log("API call: api/mapReq?" + qryString);
-
+    var text;
+    
     fetch("/api/mapReq?" + qryString)
     .then(response => response.text())
     .then(text => text);
