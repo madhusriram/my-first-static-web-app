@@ -69,16 +69,16 @@ class App extends React.Component {
     
     console.log("API call: api/mapReq?" + qryString);
     var text;
-    
+
     fetch("/api/mapReq?" + qryString)
     .then(response => response.text())
-    .then(text => text);
+    .then(text => {
+      console.log(text);
+      const dom = document.getElementById("resultcontainer");
+      const element = <Resule result={text}/>;
+      ReactDOM.render(element, dom);
 
-    console.log(text);
-
-    const dom = document.getElementById("resultcontainer");
-    const element = <Result result={text}/>;
-    ReactDOM.render(element, dom);
+    });
   }
 
   handleChange(field, e){
