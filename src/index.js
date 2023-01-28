@@ -52,12 +52,13 @@ class App extends React.Component {
     const formData = new FormData(e.target);
     
     //format v6 address; remove all colons
+    /*
     let addr = formData.get("ip");
     if (isIPV6Address(addr)) {
       formData.set("ip", addr.replaceAll(':', ''));
     } else if (isIPV4Address(addr)) {
       formData.set("ip", addr.replaceAll('.', ''));
-    }
+    }*/
 
     const data = [...formData.entries()];
 
