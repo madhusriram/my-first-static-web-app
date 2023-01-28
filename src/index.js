@@ -75,7 +75,7 @@ class App extends React.Component {
     .then(text => {
       console.log(text);
       const dom = document.getElementById("resultcontainer");
-      const element = <Resule result={text}/>;
+      const element = <Result result={text}/>;
       ReactDOM.render(element, dom);
 
     });
