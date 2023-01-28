@@ -71,12 +71,12 @@ class App extends React.Component {
 
     fetch("/api/mapReq?" + qryString)
     .then(response => response.text())
-    .then(_data => _data);
+    .then(text => text);
 
-    console.log(_data);
+    console.log(text);
 
     const dom = document.getElementById("resultcontainer");
-    const element = <Result result={_data}/>;
+    const element = <Result result={text}/>;
     ReactDOM.render(element, dom);
   }
 
