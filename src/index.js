@@ -6,14 +6,20 @@ import { isIPV4Address, isIPV6Address } from 'ip-address-validator';
 class Result extends React.Component {
   // do any formatting needed here!
   render() {
-    console.log("About to be render now: " + this.props.result);
-    return this.props.result;
+    console.log("About to render now: " + this.props.result);
+    
+    return (
+      <ul>
+        {this.props.result.map(function(nam, index){
+          return <li key={index}>{nam}</li>;
+        })}
+        </ul>
+    )
   }
 }
 
 class App extends React.Component {
   constructor(props) {
-    super(props);
 
     this.state = {
       fields: {},
