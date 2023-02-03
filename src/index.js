@@ -7,16 +7,16 @@ class Result extends React.Component {
   // do any formatting needed here!
   render() {
     console.log("About to render now: " + this.props.result);
-    var array = this.props.result.split(',');
-    console.log("Type of the returned response " + typeof array);
+    console.log("Type of the returned response " + typeof this.props.result);
 
-    return (
+    return this.props.result;
+/*    return (
       <ul>
         {array.map(function(name, index){
                     return <li key={ index }>{name}</li>;
                   })}
         </ul>
-    )
+    ) */
   }
 }
 
