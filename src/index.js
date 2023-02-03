@@ -11,7 +11,7 @@ class Result extends React.Component {
 
     var response = JSON.parse(this.props.result);
     if (response.ExceptionString !== "") {
-      return response.ExceptionString;
+      return <p style="color:red;">{response.ExceptionString}</p>;
     }
     if (response.Output !== null) {
       return response.Output;
