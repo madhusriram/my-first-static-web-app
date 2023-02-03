@@ -12,9 +12,9 @@ class Result extends React.Component {
 
     return (
       <ul>
-        {array.map((value) => {
-          return <li>{value}</li>;
-        })}
+        {array.map(function(name, index){
+                    return <li key={ index }>{name}</li>;
+                  })}
         </ul>
     )
   }
