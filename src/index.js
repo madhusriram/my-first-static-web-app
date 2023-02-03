@@ -7,23 +7,21 @@ class Result extends React.Component {
   // do any formatting needed here!
   render() {
     console.log("About to render now: " + this.props.result);
-    console.log("Type of the returned response " + typeof this.props.result);
 
     var response = JSON.parse(this.props.result);
     if (response.ExceptionString !== "") {
       return <p style={{color: 'red'}}>{response.ExceptionString}</p>;
     }
-    if (response.Output !== null) {
+/*    if (response.Output !== null) {
       return response.Output;
     }
-//    return this.props.result;
-/*    return (
+*/    return (
       <ul>
-        {array.map(function(name, index){
+        {response.output.map(function(name, index){
                     return <li key={ index }>{name}</li>;
                   })}
         </ul>
-    ) */
+    );
   }
 }
 
