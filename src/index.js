@@ -7,7 +7,7 @@ class Result extends React.Component {
   // do any formatting needed here!
   render() {
     console.log("About to render now: " + this.props.result);
-    
+
     return (
       <ul>
         {this.props.result.map(function(nam, index){
@@ -20,7 +20,8 @@ class Result extends React.Component {
 
 class App extends React.Component {
   constructor(props) {
-
+    super(props);
+    
     this.state = {
       fields: {},
       errors: {}
