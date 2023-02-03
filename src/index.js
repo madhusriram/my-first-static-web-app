@@ -12,17 +12,17 @@ class Result extends React.Component {
     if (response.ExceptionString !== "") {
       return <p style={{color: 'red'}}>{response.ExceptionString}</p>;
     }
-/*    if (response.Output !== null) {
-      return response.Output;
+
+    if (response.Output !== null) {
+      const answer = response.Output[0].split(",");
+      return (
+        <ul>
+          {answer.map(function(name, index){
+                      return <li key={ index }>{name}</li>;
+                    })}
+          </ul>
+      );
     }
-*/    
-    return (
-      <ul>
-        {response.Output.map(function(name, index){
-                    return <li key={ index }>{name}</li>;
-                  })}
-        </ul>
-    );
   }
 }
 
