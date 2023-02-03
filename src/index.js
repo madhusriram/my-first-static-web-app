@@ -10,10 +10,10 @@ class Result extends React.Component {
     console.log("Type of the returned response " + typeof this.props.result);
 
     var response = JSON.parse(this.props.result);
-    if (response.ExceptionString != "") {
+    if (response.ExceptionString !== "") {
       return response.ExceptionString;
     }
-    if (response.Output != null) {
+    if (response.Output !== null) {
       return response.Output;
     }
 //    return this.props.result;
