@@ -15,9 +15,10 @@ class Result extends React.Component {
 /*    if (response.Output !== null) {
       return response.Output;
     }
-*/    return (
+*/    
+    return (
       <ul>
-        {response.output.map(function(name, index){
+        {response.Output.map(function(name, index){
                     return <li key={ index }>{name}</li>;
                   })}
         </ul>
