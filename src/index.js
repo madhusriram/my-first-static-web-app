@@ -9,7 +9,14 @@ class Result extends React.Component {
     console.log("About to render now: " + this.props.result);
     console.log("Type of the returned response " + typeof this.props.result);
 
-    return this.props.result;
+    var response = JSON.parse(this.props.result);
+    if (response.ExceptionString != "") {
+      return response.ExceptionString;
+    }
+    if (response.Output != null) {
+      return response.Output;
+    }
+//    return this.props.result;
 /*    return (
       <ul>
         {array.map(function(name, index){
